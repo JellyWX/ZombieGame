@@ -1,3 +1,13 @@
+<Bar>:
+  size: self.size
+  pos: self.pos
+  canvas:
+    Color:
+      rgba: 0,0,0,1
+    Rectangle:
+      size: self.size
+      pos: self.pos
+
 <BG>:
   size: self.size
   pos: self.pos
@@ -19,16 +29,21 @@
       pos: self.pos
       size: self.size
 
-<Game>:
-  bg: bg
-  player: player
+<Tree>:
+  size: self.size
+  pos: self.pos
+  canvas:
+    Color:
+      rgba: 1,1,1,1
+    Rectangle:
+      pos: self.pos
+      size: self.size
+      source: self.source
 
-  BG:
-    id: bg
-    size: self.parent.proper_w,self.parent.proper_h
-    center: self.parent.center
+<Game>:
+  player: player
 
   Player:
     id: player
     size: 100,100
-    center: self.parent.center
+    center: 100,0

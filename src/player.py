@@ -8,10 +8,14 @@ class Player(Widget):
   map_x = NumericProperty(0)
   map_y = NumericProperty(0)
 
+  map_pos = ReferenceListProperty(map_x,map_y)
+
   vel_x = NumericProperty(0)
   vel_y = NumericProperty(0)
 
   vel = ReferenceListProperty(vel_x,vel_y)
+
+  inventory = []
 
   def up(self):
     self.vel_y = 1
@@ -30,4 +34,4 @@ class Player(Widget):
     self.vel_y = 0
 
   def move(self):
-    self.pos = Vector(self.vel).normalize() + self.pos
+    self.map_pos = (Vector(self.vel).normalize())*2 + self.map_pos
