@@ -96,7 +96,7 @@ class Game(Widget):
       if type(i) not in [BG,Player]:
         i.o_x = eval(i.o_xs)
         i.o_y = eval(i.o_ys)
-        i.pos = i.o_x - self.player.map_x,i.o_y - self.player.map_y
+        i.pos = i.o_x - self.player.off_x,i.o_y - self.player.off_y
 
         if i.y < self.player.y:
           i.opacity = 0.5
@@ -105,4 +105,4 @@ class Game(Widget):
           i.opacity = 1
 
     self.player.size = self.proper_w/64,self.proper_h/64
-    self.player.center = self.center
+    self.player.center = self.center_x + self.player.buffer_x,self.center_y + self.player.buffer_y
