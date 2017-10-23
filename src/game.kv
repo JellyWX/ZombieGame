@@ -1,0 +1,34 @@
+<BG>:
+  size: self.size
+  pos: self.pos
+  canvas:
+    Color:
+      rgba: 1,1,1,1
+    RoundedRectangle:
+      pos: self.pos
+      size: self.size
+      radius: [self.r,self.r,self.r,self.r]
+
+<Player>:
+  size: self.size
+  pos: self.pos
+  canvas:
+    Color:
+      rgba: 1,0,0,1
+    Ellipse:
+      pos: self.pos
+      size: self.size
+
+<Game>:
+  bg: bg
+  player: player
+
+  BG:
+    id: bg
+    size: self.parent.proper_w,self.parent.proper_h
+    center: self.parent.center
+
+  Player:
+    id: player
+    size: 100,100
+    center: self.parent.center
